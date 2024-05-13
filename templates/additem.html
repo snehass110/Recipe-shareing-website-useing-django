@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>PalatePassionWorld</title>
+    <!-- {% load static %} -->
+</head>
+
+<body
+    style="background-image: url('{% static 'bgg.jpg' %}');background-repeat: no-repeat;background-attachment: fixed;background-size: cover; ">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="height: 100px;">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" style="text-align: center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl9d4mCkegQn_dnQFq6hiPNFcQowRaBtzacA&usqp=CAU"
+                    alt="Your Logo" width="50" height="50" class="d-inline-block align-top rounded-circle">
+                <div style="font-family: 'Pacifico', cursive; color: rgb(150, 153, 0);"><b>PalatePassionWorld</b></div>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="btn btn-outline-warning nav-link ms-3" href="http://127.0.0.1:8000/"
+                            style="border: 1px solid yellow; color: yellow;">Home</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="btn btn-outline-warning nav-link ms-3" href="http://127.0.0.1:8000/#two"
+                            style="border: 1px solid yellow; color: yellow;">About</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="btn btn-outline-warning nav-link ms-3" href="/login/"
+                            style="border: 1px solid yellow; color: yellow;">Join Now !</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+    <div class="row">
+        <center>
+            <div class="col-md-5" style="text-align: center;background-color: rgba(0, 0, 0, 0.8); border-radius: 50px;">
+                <h1 style="color: rgb(255, 245, 245);"><b>ADD YOUR RECIPES</b></h1>
+            </div>
+        </center>
+    </div>
+    <div class="row">
+
+        <center>
+            <div class="col-md-10"
+                style="text-align: center;height: 800px;background-color: rgba(0, 0, 0, 0.8); border-radius: 50px;">
+               <br><br>
+<form method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+<!-- Add this inside your form tag -->
+{{ form.errors }}
+{% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+{% endif %}
+
+        <div class="row" style="color:blue; padding-left:900px;">
+
+                {{x.user.email}}<br>
+            {{x.user.username}}
+
+            </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" style="color: white;"><b>Email-id:</b></label>
+        <div class="col-sm-6">
+            <input name="email" class="form-control" value="{{x.user.email}}">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" style="color: white;"><b>Recipe name:</b></label>
+        <div class="col-sm-6">
+            <input name="name" class="form-control">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" style="color: white;"><b>Type of recipe:</b></label>
+        <div class="col-sm-6">
+            <select name="type" class="form-control">
+    <option value="non_veg">Non-Veg</option>
+    <option value="veg">Veg</option>
+</select>
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" style="color: white;"><b>Ingredients:</b></label>
+        <div class="col-sm-6">
+            <input name="ingree" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" style="color: white;"><b>Making steps:</b></label>
+        <div class="col-sm-8">
+            <textarea name="step" class="form-control" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" style="color: white;"><b>Upload image:</b></label>
+        <div class="col-sm-3">
+            <input name="image" type="file" class="form-control">
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row mb-3">
+        <center>
+            <button class="btn btn-light" type="submit">Submit</button>
+        </center>
+
+
+    </div>
+</form>
+            </div>
+    </div>
+
+
+</body>
+
+</html>

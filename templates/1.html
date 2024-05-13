@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>PalatePassionWorld</title>
+
+
+
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-box {
+            position: absolute;
+
+            /* left: 100%; */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .image-container:hover .hover-box {
+            display: block;
+        }
+
+        .card-img {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* This ensures the image covers the entire space */
+  }
+.card{
+
+height:1000px;
+<!--width:500px-->
+}
+
+
+ </style>
+</head>
+
+<body
+    style="background-image: url('{% static 'c.jpg' %}');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="height: 100px;">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" style="text-align: center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl9d4mCkegQn_dnQFq6hiPNFcQowRaBtzacA&usqp=CAU"
+                    alt="Your Logo" width="50" height="50" class="d-inline-block align-top rounded-circle">
+                <div style="font-family: 'Pacifico', cursive; color: rgb(150, 153, 0);"><b>PalatePassionWorld</b></div>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="btn btn-outline-warning nav-link ms-3" href="#one"
+                            style="border: 1px solid yellow; color: yellow;">Home</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="btn btn-outline-warning nav-link ms-3" href="#two"
+                            style="border: 1px solid yellow; color: yellow;">About</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="btn btn-outline-warning nav-link ms-3" href="#"
+                            style="border: 1px solid yellow; color: yellow;">Join Now !</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+{% for i in obj %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="image-container">
+                <img src="{% static 'user.png' %}" style="border-radius: 118px; height: 50px; width: 50px; margin-left: 30px;">
+                <h2 style="color: white;"><b>  "Bring your kitchen magic to life! Share your special recipe and review ......... "</h2>
+                <div class="hover-box" style="left: 100px; top: 0; border: 3px solid black; background-color: rgb(126, 126, 126); position: absolute;">
+                    <p><b>User:{{i.user.username}}</b></p>
+                    <p><b>Email:{{i.user.email}}</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br>
+  <div class="container-fluid mx-auto">
+    <div class="row row-cols-2 g-4 justify-content-center">
+      <div class="col mb-4">
+        <!-- Card 1 -->
+        <div class="card h-100" style="background-color: black;">
+          <img src="{% static 'd.jpg' %}" class="card-img card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title" style="color: white;"><b>Add your Recipes</b></h2>
+            <p class="card-text" style="color:rgb(240, 240, 126);">"Cooking is an art, and you're the artist! Add your unique recipe to our growing collection."</p>
+            <center>
+              <a class="btn btn-outline-light" style="width: 100px;" href="/add/{{i.id}}">ADD</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4" >
+        <!-- Card 2 -->
+        <div class="card h-100" style="background-color: black;">
+          <img src="{% static 'e.jpg' %}" class="card-img card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title" style="color: white;"><b>View Reviews & Feedback</b></h2>
+            <p class="card-text" style="color:rgb(240, 240, 126);">"Taste the love! Submit your recipe and experience the heartwarming feedback."</p>
+            <center>
+              <a class="btn btn-outline-light" style="width: 100px;" href="/feedback/">VIEW</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <!-- Card 3 -->
+        <div class="card h-100" style="background-color: black;">
+          <img src="{% static 'b.jpg' %}" class="card-img card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title" style="color: white;"><b>View all recipes</b></h2>
+            <p class="card-text" style="color:rgb(240, 240, 126);">"View all recipes shared by all users and make your recipe unique"</p>
+            <center>
+              <a class="btn btn-outline-light" style="width: 100px;" href="/view2/">VIEW</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <!-- Card 4 -->
+        <div class="card h-100" style="background-color: black;">
+          <img src="{% static '10.jpg' %}" class="card-img card-img-top" alt="..." style="margin-bottom: 10px;">
+          <div class="card-body">
+            <h2 class="card-title" style="color: white;"><b>Your Recipes</b></h2>
+            <p class="card-text" style="color:rgb(240, 240, 126);">"View your all recipes and make changes."</p>
+            <center>
+
+              <a class="btn btn-outline-light" style="width: 100px;" href="/view/{{i.id}}">RECIPES</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</div>
+<br><br>
+{% endfor %}
+</body>
+
+</html>

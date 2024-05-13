@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>PalatePassionWorld</title>
+</head>
+<body >
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="height: 100px;">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" style="text-align: center;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl9d4mCkegQn_dnQFq6hiPNFcQowRaBtzacA&usqp=CAU" alt="Your Logo" width="50" height="50" class="d-inline-block align-top rounded-circle">
+            <div style="font-family: 'Pacifico', cursive; color: rgb(150, 153, 0);" ><b>PalatePassionWorld</b></div>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="btn btn-outline-warning nav-link ms-3" href="#one" style="border: 1px solid yellow; color: yellow;">Home</a>
+
+                </li>
+                <li class="nav-item">
+
+                    <a class="btn btn-outline-warning nav-link ms-3" href="#two" style="border: 1px solid yellow; color: yellow;">About</a>
+
+                </li>
+                <li class="nav-item">
+
+                    <a class="btn btn-outline-warning nav-link ms-3" href="/login/" style="border: 1px solid yellow; color: yellow;">Join Now !</a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="one">
+
+<div class="col-md-12" style="position: relative; overflow: hidden;">
+            <img class="img-fluid" src="{% static 'a.jpg' %}" style="width: 100%; height: 600px; display: block; opacity: 0.9;">
+
+            <div
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff;">
+                <h1 style="font-size: 3em; font-weight: bold;">Welcome to PalatePassionWorld</h1>
+                <p style="color: #fff; font-family: 'Cursive', sans-serif; font-size: 1.5em;">"Discover the art of
+                    cooking and share your favorite recipes with the world."</p>
+
+                <div style="margin-top: 20px;">
+                    <img style="height: 100px; width: 100px; border-radius: 50%; margin: 0 10px;"
+                        src="https://images6.alphacoders.com/439/439410.jpg">
+                    <img style="height: 100px; width: 100px; border-radius: 50%; margin: 0 10px;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq24eCWYAwi4vxaI-6OmEbNlq9R8-8sOBZgA&usqp=CAU">
+                    <img style="height: 100px; width: 100px; border-radius: 50%; margin: 0 10px;" src="{% static '5.jpg' %}">
+                </div>
+
+                <br>
+                <br>
+                <a href="/login2/" class="btn btn-dark" style="width: 200px; font-size: 1.2em;">View All Recipes</a>
+            </div>
+        </div>
+</div>
+<div id="two">
+<div class="row" >
+
+<div class="container-fluid" style="background-color: rgb(0, 0, 0); height: 500px;" >
+    <br><br>
+    <center>
+    <h1 style="color: bisque;">About</h1><br>
+    <p style="color: blanchedalmond; font-family: cursive;"><b>"Welcome to PalatePassionWorld,<br>
+        where every recipe tells a story and every dish is ajourney of flavors! <br>
+        Join our culinary community to embark on a delightful adventure through the diverse landscapes of taste.<br>
+         Unleash your passion for cooking and discover a world of mouthwatering recipes shared by fellow food enthusiasts.<br>
+        Whether you're a seasoned chef or a kitchen novice,PalatePassionWorld is your passport to a global feast.<br>
+         Let's create, share, and savor the magic of flavors together because here, <br>
+         every palate has a story to tell and every passion finds its world...."</b></p><br>
+         <div class="row">
+            <div class="col-md-4">
+                <img  style="height: 150px; width: 200px;"   src="{% static '1.jpg' %}">
+            </div>
+            <div class="col-md-4">
+                <img  style="height: 150px; width: 200px;"    src="{% static '5.jpg' %}">
+            </div>
+            <div class="col-md-4">
+                <img  style="height: 150px; width: 200px;"   src="{% static '7.jpg' %}">
+            </div>
+         </div>
+         </center>
+</div>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
